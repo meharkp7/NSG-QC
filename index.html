@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Work Entry Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="logo.jpg" alt="Company Logo" class="logo">
+    <h2>Daily Work Entry</h2>
+
+    <label for="mode">Select Mode:</label>
+    <select id="mode" onchange="toggleMode()">
+      <option value="morning">Morning Entry</option>
+      <option value="evening">Evening Update</option>
+    </select>
+
+    <form id="entryForm">
+      <!-- Morning Mode -->
+      <div class="morning">
+        <label>Team Lead</label>
+        <select id="teamLead">
+          <option value="">--Select--</option>
+          <option>Sushil Bassi</option>
+        </select>
+
+        <label>User Name</label>
+        <select id="userName" onchange="fillEmpID()">
+          <option value="">--Select--</option>
+          <option>Vijay Khanna</option>
+          <option>Farha Mughees</option>
+          <option>Subhankar Jana</option>
+          <option>Soukat Kazi</option>
+          <option>Dibyajiban Parida</option>
+          <option>Sidharth Kumar Rout</option>
+          <option>Nilanjana Banjare</option>
+          <option>Rashi Verma</option>
+          <option>Aakansha Karki</option>
+          <option>Ram Singh</option>
+          <option>Divya Tyagi</option>
+          <option>Kashish Kumari</option>
+          <option>Md. Rashid</option>
+          <option>Ankur Das</option>
+          <option>Sudhir Kumar Prasad</option>
+          <option>Sandeep</option>
+          <option>Kiran</option>
+          <option>Akshat Singh</option>
+          <option>Muskan Rajput</option>
+          <option>Sakshi</option>
+          <option>Priynaka</option>
+          <option>Mohit Saini</option>
+          <option>Srinjoy Roy</option>
+          <option>Abhishak Chauhan</option>
+          <option>Ashok Kumar</option>
+          <option>Vikky Kataria</option>
+          <option>Sandeep Rawat</option>
+          <option>Arvind Kumar Jeminy</option>
+          <option>Ram Niwas</option>
+          <option>Krishan Kumar</option>
+          <option>Mehar Chand</option>
+          <option>Sonu</option>
+          <option>Krishan Kumar Patail</option>
+          <option>Parveen</option>
+          <option>Usha Samberwal</option>
+          <option>Maninder</option>
+          <option>Abhinav</option>
+          <option>Satyam Thandar</option>
+          <option>Pankaj</option>
+          <option>Vinay</option>
+          <option>Arti</option>
+          <option>Imran</option>
+          <option>Neeraj Bisht</option>
+          <option>Balvinder</option>
+          <option>Anjana</option>
+          <option>Pradeep</option>
+          <option>Shayam</option>
+          <option>Yogesh Kumar</option>
+          <option>Vinod Triphati</option>
+          <option>Rahul Bhartari</option>
+          <option>Bhaskar</option>
+          <option>Surrender Singh</option>
+          <option>Vipin Updhyay</option>
+          <option>Anish Kumar</option>
+          <option>Sushil Bassi</option>
+          <option>Soman</option>
+          <option>Anuj</option>
+          <option>Rahul Pandey</option>
+          <option>Shiva Krishna</option>
+          <option>Shanish</option>
+        </select>
+
+        <label>EMP ID</label>
+        <input type="text" id="empID" readonly />
+
+        <label>Work Type</label>
+        <select id="workType">
+          <option>QC</option>
+          <option>QC1</option>
+          <option>Rework</option>
+        </select>
+
+        <label>Image No</label>
+        <input type="text" id="imageNo" />
+
+        <label>Layer</label>
+        <select id="layer">
+          <option>Hydrography</option>
+          <option>Transportation</option>
+          <option>Physiography/Vegetation/Agriculture</option>
+        </select>
+
+        <label>Start Date</label>
+        <input type="text" id="startDate" readonly />
+
+        <label>Start Time</label>
+        <input type="text" id="startTime" readonly />
+      </div>
+
+      <!-- Evening Mode -->
+      <div class="evening" style="display:none">
+        <label>User Name</label>
+        <select id="userNameEvening" onchange="fillEmpIDEvening()">
+          <option value="">--Select--</option>
+          <option>Vijay Khanna</option>
+          <option>Farha Mughees</option>
+          <option>Subhankar Jana</option>
+          <option>Soukat Kazi</option>
+          <option>Dibyajiban Parida</option>
+          <option>Sidharth Kumar Rout</option>
+          <option>Nilanjana Banjare</option>
+          <option>Rashi Verma</option>
+          <option>Aakansha Karki</option>
+          <option>Ram Singh</option>
+          <option>Divya Tyagi</option>
+          <option>Kashish Kumari</option>
+          <option>Md. Rashid</option>
+          <option>Ankur Das</option>
+          <option>Sudhir Kumar Prasad</option>
+          <option>Sandeep</option>
+          <option>Kiran</option>
+          <option>Akshat Singh</option>
+          <option>Muskan Rajput</option>
+          <option>Sakshi</option>
+          <option>Priynaka</option>
+          <option>Mohit Saini</option>
+          <option>Srinjoy Roy</option>
+          <option>Abhishak Chauhan</option>
+          <option>Ashok Kumar</option>
+          <option>Vikky Kataria</option>
+          <option>Sandeep Rawat</option>
+          <option>Arvind Kumar Jeminy</option>
+          <option>Ram Niwas</option>
+          <option>Krishan Kumar</option>
+          <option>Mehar Chand</option>
+          <option>Sonu</option>
+          <option>Krishan Kumar Patail</option>
+          <option>Parveen</option>
+          <option>Usha Samberwal</option>
+          <option>Maninder</option>
+          <option>Abhinav</option>
+          <option>Satyam Thandar</option>
+          <option>Pankaj</option>
+          <option>Vinay</option>
+          <option>Arti</option>
+          <option>Imran</option>
+          <option>Neeraj Bisht</option>
+          <option>Balvinder</option>
+          <option>Anjana</option>
+          <option>Pradeep</option>
+          <option>Shayam</option>
+          <option>Yogesh Kumar</option>
+          <option>Vinod Triphati</option>
+          <option>Rahul Bhartari</option>
+          <option>Bhaskar</option>
+          <option>Surrender Singh</option>
+          <option>Vipin Updhyay</option>
+          <option>Anish Kumar</option>
+          <option>Sushil Bassi</option>
+          <option>Soman</option>
+          <option>Anuj</option>
+          <option>Rahul Pandey</option>
+          <option>Shiva Krishna</option>
+          <option>Shanish</option>
+        </select>
+
+        <label>EMP ID</label>
+        <input type="text" id="empIDEvening" readonly />
+
+        <label>Image No</label>
+        <input type="text" id="imageNoEvening" />
+
+        <label>Work Completed %</label>
+        <input type="number" id="workPercent" min="0" max="100" />
+
+        <label>Status</label>
+        <select id="status">
+          <option>Accept</option>
+          <option>Reject</option>
+          <option>In Progress</option>
+        </select>
+
+        <label>End Time</label>
+        <input type="text" id="endTime" readonly />
+
+        <label>Remarks</label>
+        <textarea id="remarks" rows="3"></textarea>
+      </div>
+
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

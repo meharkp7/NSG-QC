@@ -1,0 +1,66 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: hsl(143, 34%, 35%,80%);
+  box-shadow: 0 0 20px rgba(0,0,0,0.15); 
+  color: hsla(143, 82%, 13%); 
+}
+
+
+.container {
+  position: relative; /* This is essential for the logo's positioning! */
+  max-width: 700px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  opacity: 0.85;
+}
+.logo {
+  position: absolute;   /* This lets us place it precisely */
+  top: 20px;            /* 20px from the top of the container */
+  right: 25px;          /* 25px from the right of the container */
+  
+  /* THIS CONTROLS THE SIZE */
+  height: 40px;         /* Set the height to make it smaller. Adjust as needed! */
+  width: auto;          /* 'auto' keeps the original aspect ratio (no stretching) */
+}
+
+h2 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #256c45;
+}
