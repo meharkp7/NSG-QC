@@ -29,7 +29,7 @@ function fillEmpIDEvening() {
 
   if (!user) return;
 
-  const url = `https://script.google.com/macros/s/AKfycbzQuwTCWSUPJqILF1qTotCYch_EEbrwAtgkau2KK4ST4MNwwLdwcN9XLBLm7zQAtsoI/exec?username=${encodeURIComponent(user)}`;
+  const url = `https://script.google.com/macros/s/AKfycbxMxmI0I6iZPd_i9oRpJL6qcNc-8G-tq4rvtW_3EcUf0p82nkFxXquvx_Kh9bGR_6Mk/exec?username=${encodeURIComponent(user)}`;
 
   fetch(url)
     .then(res => res.json())
@@ -85,7 +85,7 @@ function submitForm() {
     remarks: document.getElementById("remarks").value || ""
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbzQuwTCWSUPJqILF1qTotCYch_EEbrwAtgkau2KK4ST4MNwwLdwcN9XLBLm7zQAtsoI/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxMxmI0I6iZPd_i9oRpJL6qcNc-8G-tq4rvtW_3EcUf0p82nkFxXquvx_Kh9bGR_6Mk/exec", {
     method: "POST",
     mode: "no-cors",
     headers: { "Content-Type": "application/json" },
