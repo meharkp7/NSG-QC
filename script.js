@@ -130,7 +130,7 @@ function submitForm() {
     body: JSON.stringify(data)
   })
   .then(() => {
-    alert("Submitted! (Cannot verify status due to no-cors mode)");
+    alert("Submitted!");
     document.getElementById("entryForm").reset();
     toggleMode();
   })
