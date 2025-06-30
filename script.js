@@ -63,19 +63,19 @@ const empIDMap = {
   "Manish Kumar": "N03973"
 };
 
-// Fill EMP ID based on morning user name
+// Auto-fill EMP ID for morning
 function fillEmpID() {
   const name = document.getElementById("userName").value;
   document.getElementById("empID").value = empIDMap[name] || "";
 }
 
-// Fill EMP ID based on evening user name
+// Auto-fill EMP ID for evening
 function fillEmpIDEvening() {
   const name = document.getElementById("userNameEvening").value;
   document.getElementById("empIDEvening").value = empIDMap[name] || "";
 }
 
-// Toggle between Morning and Evening Modes
+// Toggle between modes
 function toggleMode() {
   const mode = document.getElementById("mode").value;
   const morningDiv = document.querySelector(".morning");
@@ -95,7 +95,7 @@ function toggleMode() {
   }
 }
 
-// Submit with 15-second delay
+// Form submit handler
 function submitForm() {
   const submitBtn = document.querySelector("button[onclick='submitForm()']");
   submitBtn.textContent = "Submitting...";
@@ -123,24 +123,18 @@ function submitForm() {
 
   fetch("https://script.google.com/macros/s/AKfycbzA-o28IlaRk9CyMItc_05gHQHrShr75KQhXsBJ_Gsbv9318F8oHko-VqrUyVtS8cOn/exec", {
     method: "POST",
+    mode: "no-cors", // Crucial for no network error
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(data)
   })
-  .then(res => res.text())
-  .then(response => {
-    if (response === "Success") {
-      alert("Submitted successfully!");
-      document.getElementById("entryForm").reset();
-      toggleMode();
-    } else if (response === "DUPLICATE") {
-      alert("Duplicate entry! This submission was already recorded.");
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
+  .then(() => {
+    alert("Submitted! (Cannot verify status due to no-cors mode)");
+    document.getElementById("entryForm").reset();
+    toggleMode();
   })
-  .catch(err => {
+  .catch((err) => {
     alert("Network error. Please check your connection.");
     console.error(err);
   })
@@ -149,7 +143,7 @@ function submitForm() {
   });
 }
 
-// Initialize on page load
+// Initialize
 window.onload = () => {
   toggleMode();
 };
