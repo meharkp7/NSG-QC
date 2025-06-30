@@ -122,7 +122,7 @@ function submitForm() {
     remarks: document.getElementById("remarks")?.value || ""
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbzQuwTCWSUPJqILF1qTotCYch_EEbrwAtgkau2KK4ST4MNwwLdwcN9XLBLm7zQAtsoI/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzA-o28IlaRk9CyMItc_05gHQHrShr75KQhXsBJ_Gsbv9318F8oHko-VqrUyVtS8cOn/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
