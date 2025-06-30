@@ -98,7 +98,6 @@ function toggleMode() {
 // Submit with 15-second delay
 function submitForm() {
   const submitBtn = document.querySelector("button[onclick='submitForm()']");
-  submitBtn.disabled = true;
   submitBtn.textContent = "Submitting...";
 
   const mode = document.getElementById("mode").value;
@@ -146,7 +145,6 @@ function submitForm() {
     console.error(err);
   })
   .finally(() => {
-    submitBtn.disabled = false;
     submitBtn.textContent = "Submit";
   });
 }
