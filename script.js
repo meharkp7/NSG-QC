@@ -99,54 +99,56 @@ function toggleMode() {
 function submitForm() {
   const submitBtn = document.querySelector("button[onclick='submitForm()']");
   submitBtn.disabled = true;
-  submitBtn.textContent = "Submitting in 15s...";
+  submitBtn.textContent = "Submitting...";
 
-  let countdown = 15;
-  const interval = setInterval(() => {
-    countdown--;
-    submitBtn.textContent = `Submitting in ${countdown}s...`;
+  const mode = document.getElementById("mode").value;
 
-    if (countdown === 0) {
-      clearInterval(interval);
-      submitBtn.textContent = "Submitting...";
+  const data = {
+    mode,
+    teamLead: document.getElementById("teamLead")?.value || "",
+    userName: document.getElementById("userName")?.value || "",
+    empID: document.getElementById("empID")?.value || "",
+    userNameEvening: document.getElementById("userNameEvening")?.value || "",
+    empIDEvening: document.getElementById("empIDEvening")?.value || "",
+    workType: document.getElementById("workType")?.value || "",
+    imageNo: document.getElementById("imageNo")?.value || "",
+    imageNoEvening: document.getElementById("imageNoEvening")?.value || "",
+    layer: document.getElementById("layer")?.value || "",
+    startDate: document.getElementById("startDate")?.value || "",
+    startTime: document.getElementById("startTime")?.value || "",
+    workPercent: document.getElementById("workPercent")?.value || "",
+    status: document.getElementById("status")?.value || "",
+    endTime: document.getElementById("endTime")?.value || "",
+    remarks: document.getElementById("remarks")?.value || ""
+  };
 
-      const mode = document.getElementById("mode").value;
-
-      const data = {
-        mode,
-        teamLead: document.getElementById("teamLead")?.value || "",
-        userName: document.getElementById("userName")?.value || "",
-        empID: document.getElementById("empID")?.value || "",
-        userNameEvening: document.getElementById("userNameEvening")?.value || "",
-        empIDEvening: document.getElementById("empIDEvening")?.value || "",
-        workType: document.getElementById("workType")?.value || "",
-        imageNo: document.getElementById("imageNo")?.value || "",
-        imageNoEvening: document.getElementById("imageNoEvening")?.value || "",
-        layer: document.getElementById("layer")?.value || "",
-        startDate: document.getElementById("startDate")?.value || "",
-        startTime: document.getElementById("startTime")?.value || "",
-        workPercent: document.getElementById("workPercent")?.value || "",
-        status: document.getElementById("status")?.value || "",
-        endTime: document.getElementById("endTime")?.value || "",
-        remarks: document.getElementById("remarks")?.value || ""
-      };
-
-      fetch("https://script.google.com/macros/s/AKfycbzQuwTCWSUPJqILF1qTotCYch_EEbrwAtgkau2KK4ST4MNwwLdwcN9XLBLm7zQAtsoI/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      }).then(() => {
-        alert("Submitted successfully!");
-        document.getElementById("entryForm").reset();
-        toggleMode(); // reset time fields again
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit";
-      });
+  fetch("https://script.google.com/macros/s/AKfycbzQuwTCWSUPJqILF1qTotCYch_EEbrwAtgkau2KK4ST4MNwwLdwcN9XLBLm7zQAtsoI/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(res => res.text())
+  .then(response => {
+    if (response === "Success") {
+      alert("Submitted successfully!");
+      document.getElementById("entryForm").reset();
+      toggleMode();
+    } else if (response === "DUPLICATE") {
+      alert("Duplicate entry! This submission was already recorded.");
+    } else {
+      alert("Something went wrong. Please try again.");
     }
-  }, 1000);
+  })
+  .catch(err => {
+    alert("Network error. Please check your connection.");
+    console.error(err);
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit";
+  });
 }
 
 // Initialize on page load
