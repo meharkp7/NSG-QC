@@ -13,8 +13,8 @@
 
     <label for="mode">Select Mode:</label>
     <select id="mode" onchange="toggleMode()">
-      <option value="morning">Start Time</option>
-      <option value="evening">End Time</option>
+      <option value="morning">Morning Entry</option>
+      <option value="evening">Evening Update</option>
     </select>
 
     <form id="entryForm">
@@ -28,68 +28,69 @@
 
         <label>User Name</label>
         <select id="userName" onchange="fillEmpID()">
-          <option value="">--Select--</option>
-          <option>Vijay Khanna</option>
-          <option>Farha Mughees</option>
-          <option>Subhankar Jana</option>
-          <option>Soukat Kazi</option>
-          <option>Dibyajiban Parida</option>
-          <option>Sidharth Kumar Rout</option>
-          <option>Nilanjana Banjare</option>
-          <option>Rashi Verma</option>
-          <option>Aakansha Karki</option>
-          <option>Ram Singh</option>
-          <option>Divya Tyagi</option>
-          <option>Kashish Kumari</option>
-          <option>Md. Rashid</option>
-          <option>Ankur Das</option>
-          <option>Sudhir Kumar Prasad</option>
-          <option>Sandeep</option>
-          <option>Kiran</option>
-          <option>Akshat Singh</option>
-          <option>Muskan Rajput</option>
-          <option>Sakshi</option>
-          <option>Priynaka</option>
-          <option>Mohit Saini</option>
-          <option>Srinjoy Roy</option>
-          <option>Abhishak Chauhan</option>
-          <option>Ashok Kumar</option>
-          <option>Vikky Kataria</option>
-          <option>Sandeep Rawat</option>
-          <option>Arvind Kumar Jeminy</option>
-          <option>Ram Niwas</option>
-          <option>Krishan Kumar</option>
-          <option>Mehar Chand</option>
-          <option>Sonu</option>
-          <option>Krishan Kumar Patail</option>
-          <option>Parveen</option>
-          <option>Usha Samberwal</option>
-          <option>Maninder</option>
-          <option>Abhinav</option>
-          <option>Satyam Thandar</option>
-          <option>Pankaj</option>
-          <option>Vinay</option>
-          <option>Arti</option>
-          <option>Imran</option>
-          <option>Neeraj Bisht</option>
-          <option>Balvinder</option>
-          <option>Anjana</option>
-          <option>Pradeep</option>
-          <option>Shayam</option>
-          <option>Yogesh Kumar</option>
-          <option>Vinod Triphati</option>
-          <option>Rahul Bhartari</option>
-          <option>Bhaskar</option>
-          <option>Surrender Singh</option>
-          <option>Vipin Updhyay</option>
-          <option>Anish Kumar</option>
-          <option>Sushil Bassi</option>
-          <option>Soman</option>
-          <option>Anuj</option>
-          <option>Rahul Pandey</option>
-          <option>Shiva Krishna</option>
-          <option>Shanish</option>
-        </select>
+  <option value="">--Select--</option>
+  <option>Vijay Khanna</option>
+  <option>Farha Mughees</option>
+  <option>Subhankar Jana</option>
+  <option>Soukat Kazi</option>
+  <option>Dibyajiban Parida</option>
+  <option>Sidharth Kumar Rout</option>
+  <option>Nilanjana Banjare</option>
+  <option>Rashi Verma</option>
+  <option>Aakansha Karki</option>
+  <option>Ram Singh</option>
+  <option>Divya Tyagi</option>
+  <option>Kashish Kumari</option>
+  <option>Md. Rashid</option>
+  <option>Ankur Das</option>
+  <option>Sudhir Kumar Prasad</option>
+  <option>Sandeep</option>
+  <option>Kiran</option>
+  <option>Akshat Singh</option>
+  <option>Muskan Rajput</option>
+  <option>Sakshi</option>
+  <option>Priynaka</option>
+  <option>Mohit Saini</option>
+  <option>Srinjoy Roy</option>
+  <option>Abhishak Chauhan</option>
+  <option>Ashok Kumar</option>
+  <option>Vikky Kataria</option>
+  <option>Sandeep Rawat</option>
+  <option>Arvind Kumar Jeminy</option>
+  <option>Ram Niwas</option>
+  <option>Krishan Kumar</option>
+  <option>Mehar Chand</option>
+  <option>Sonu</option>
+  <option>Krishan Kumar Patel</option>
+  <option>Praveen Sharma</option>
+  <option>Usha Samberwal</option>
+  <option>Manendra</option>
+  <option>Abhinav</option>
+  <option>Satyam Thandar</option>
+  <option>Pankaj Kumar</option>
+  <option>Vinay</option>
+  <option>Aarti Kumari</option>
+  <option>Imraan Khan</option>
+  <option>Neeraj Singh</option>
+  <option>Balvinder Singh</option>
+  <option>Anjana</option>
+  <option>Pradip Das</option>
+  <option>Shyam Sunder Maurya</option>
+  <option>Yogesh Kumar</option>
+  <option>Vinod Triphati</option>
+  <option>Rahul Bhartari</option>
+  <option>Bhaskar</option>
+  <option>Surrender Singh</option>
+  <option>Vipin Updhyay</option>
+  <option>Anish Kumar</option>
+  <option>Sushil Bassi</option>
+  <option>Soman</option>
+  <option>Anuj Kumar</option>
+  <option>Rahul Pandey</option>
+  <option>Shiva Krishna</option>
+  <option>Shanish</option>
+  <option>Manish Kumar</option>
+</select>
 
         <label>EMP ID</label>
         <input type="text" id="empID" readonly />
@@ -109,7 +110,6 @@
           <option>Hydrography</option>
           <option>Transportation</option>
           <option>Physiography/Vegetation/Agriculture</option>
-          <option>Full File</option>
         </select>
 
         <label>Start Date</label>
